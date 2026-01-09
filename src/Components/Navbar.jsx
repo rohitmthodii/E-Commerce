@@ -6,54 +6,60 @@ import Userprofile from '../assets/Icons/userprofile.svg'
 import Whishlist from '../assets/Icons/whishlist.svg'
 import Shoppingcart from '../assets/Icons/shoppingcart.svg'
 
-  const navItems = [
-    "OFFERS",
-    "EARRINGS",
-    "DEVOTIONAL",
-    "BANGLE",
-    "BRACELET",
-    "PLATINUM",
-    "SOLITAIRE",
-    "PENDANT",
-    " RINGS",
-    "NOSE PIN",
-    "COUPLE BAND",
-    "NECKLACE",
-    "NAVARATNA",
-  ];
-
+const navItems = [
+  "OFFERS",
+  "EARRINGS",
+  "DEVOTIONAL",
+  "BANGLE",
+  "BRACELET",
+  "PLATINUM",
+  "SOLITAIRE",
+  "PENDANT",
+  "RINGS",
+  "NOSE PIN",
+  "COUPLE BAND",
+  "NECKLACE",
+  "NAVARATNA",
+];
 
 const Navbar = () => {
   return (
-    <div className='flex flex-col bg-primary px-16 py-3'>
+    <div className='flex flex-col bg-primary px-4 sm:px-8 md:px-16 pt-4'>
+      <div className='flex items-center justify-between gap-4'>
+        {/* LOGO */}
+        <img src={Logo} alt="Logo" className="w-32 sm:w-40" />
 
-      <div className='flex flex-row items-center justify-between'>
-        <div>
-            {/* LOGO  */}
-            <img src={Logo} alt="" />
-        </div>
-        {/* SEARCH + BUTTONS  */}
-        <div className='flex flex-row items-center gap-5'>
-            <div className='flex items-center bg-white px-5 rounded border-2 border-black/50'>
-                <Search className='w-5 h-5' />
-                <input type="search" name='search' className='outline-none py-2 w-72 ml-2 text-sm font-medium' placeholder='Search Here' />
-            </div>
-            <div className='flex flex-row justify-center items-center gap-3'>
-                <img src={Notification} alt="" />
-                <img src={Userprofile} alt="" />
-                <img src={Whishlist} alt="" />
-                <img src={Shoppingcart} alt="" />
-            </div>
+        {/* SEARCH + ICONS */}
+        <div className='flex items-center gap-4'>
+          <div className='hidden sm:flex items-center bg-white px-5 rounded border-2 border-black/50'>
+            <Search className='w-5 h-5' />
+            <input
+              type="search"
+              name='search'
+              className='outline-none py-2 w-72 ml-2 text-sm font-medium'
+              placeholder='Search Here'
+            />
+          </div>
+
+          <div className='flex items-center gap-3'>
+            <img src={Notification} alt="Notification" />
+            <img src={Userprofile} alt="User" />
+            <img src={Whishlist} alt="Wishlist" />
+            <img src={Shoppingcart} alt="Cart" />
+          </div>
         </div>
       </div>
 
-      {/* NAVIGATIONS  */}
-       <div className='flex flex-row justify-between mt-4 flex-wrap'>
-        {navItems.map((item, index) => (
-          <button key={index} className='px-3 py-1 text-sm font-medium'>
-            {item}
-          </button>
-        ))}
+      <div className="mt-4 overflow-x-auto scrollbar-hide flex w-full">
+        <div className="flex gap-6 mx-auto justify-between w-full">
+          {navItems.map((item, index) => (
+            <button
+              key={index}
+              className="text-sm font-medium whitespace-nowrap px-1 cursor-pointer pb-4 border-b-2 border-primary hover:border-black transition-all">
+              {item}
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   )

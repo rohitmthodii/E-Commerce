@@ -39,43 +39,34 @@ const budgetData = [
 
 const NewArrivals = () => {
   return (
-    <div className="flex flex-col bg-[#222222] w-full pb-10">
-
-      {/* Heading */}
-      <div className="max-w-7xl mx-auto w-full">
-        <div className="flex justify-between items-center mt-16">
-          <div>
-            <p className="text-secondary font-bodoni font-bold text-3xl">
-              New Arrivals
-            </p>
-            <p className="text-gray-500/80 text-sm">
-              243 New items added
-            </p>
-          </div>
-
-          <p className="text-secondary cursor-pointer hover:underline">
-            See all
-          </p>
+    <div className="flex flex-col bg-[#222222] w-full pb-10 pt-10">
+      <div className="max-w-7xl mx-auto w-full px-4 flex flex-col">
+        <div className="flex justify-between items-center mt-8">
+            <div className='flex flex-col'>
+              <p className="text-secondary font-bodoni font-bold text-3xl">New Arrivals</p>
+              <p className="text-gray-500/80 text-sm">243 New items added</p>
+            </div>
+            <p className="text-secondary cursor-pointer">See all</p>
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-4 gap-5 mt-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
           {budgetData.map((item) => (
             <div
               key={item.id}
               className="bg-black rounded-xl flex justify-center"
             >
-              <div className="w-80 pb-4">
+              <div className="w-full max-w-[320px] pb-4 flex flex-col">
 
                 {/* Image */}
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="rounded-t-xl w-full"
+                  className="rounded-t-xl w-full object-cover"
                 />
 
                 {/* Title & Price */}
-                <div className="flex justify-between items-center px-4 mt-4">
+                <div className="flex justify-between items-center px-4 mt-6">
                   <p className="text-secondary text-xl font-medium">
                     {item.title}
                   </p>
@@ -90,8 +81,8 @@ const NewArrivals = () => {
                 </p>
 
                 {/* Button + Heart */}
-                <div className="flex items-center gap-3 px-4 mt-4 justify-between">
-                  <button className="bg-primary px-8 py-2 rounded-lg text-black font-medium hover:opacity-90 transition w-56">
+                <div className="flex items-center gap-2 px-4 mt-4">
+                  <button className="bg-primary flex-1 py-2 rounded-lg text-black font-medium hover:opacity-80 transition-all">
                     ADD TO CART
                   </button>
 
