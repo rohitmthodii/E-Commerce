@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Solway:wght@300;400;500;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #E7F66C;
+  --color-secondary: #F0F0D6;
+}
+
+.font-solway {
+  font-family: "Solway", serif;
+}
+
+.font-bodoni {
+  font-family: "Bodoni Moda", serif;
+}
+
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+html, body {
+  overflow-x: hidden;
+  
+}
